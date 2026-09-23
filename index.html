@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="theme-color" content="#1a0812">
+  <title>Особенное приглашение для Наты ❤️</title>
+  
+  <!-- Open Graph for rich previews in Telegram/WhatsApp -->
+  <meta property="og:title" content="Для моей любимой Наты ❤️">
+  <meta property="og:description" content="У меня есть кое-что важное для тебя... Открой, когда будешь готова.">
+  <meta property="og:type" content="website">
+
+  <!-- Google Fonts: Cormorant Garamond (romantic serif) + Montserrat (clean body) + Great Vibes (cursive accent) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Great+Vibes&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+  
+  <!-- Canvas Confetti Library for celebration -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+
+  <!-- Ambient Canvas for glowing ember & heart particles -->
+  <canvas id="ambient-canvas"></canvas>
+
+  <!-- Background Music Audio Element (Монеточка - Твоё имя) -->
+  <audio id="bg-music" src="monetochka.mp3" preload="auto" loop playsinline></audio>
+
+  <!-- Ambient Romantic Music / Sound Toggle -->
+  <button id="audio-toggle" class="audio-toggle" aria-label="Управление песней" title="Включить / Выключить музыку">
+    <div class="audio-icon">
+      <span class="bar bar-1"></span>
+      <span class="bar bar-2"></span>
+      <span class="bar bar-3"></span>
+    </div>
+    <span class="audio-label" id="audio-toggle-label">Монеточка 🎵</span>
+  </button>
+
+  <!-- ============================================ -->
+  <!-- 1. INTERACTIVE ENVELOPE SCREEN (First Screen) -->
+  <!-- ============================================ -->
+  <section id="envelope-screen" class="envelope-screen">
+    <div class="envelope-wrapper">
+      <div class="floating-heart-hint">💌 Тебе пришло письмо</div>
+      
+      <div class="envelope" id="envelope-card">
+        <div class="envelope-front">
+          <div class="envelope-flap" id="envelope-flap"></div>
+          <div class="envelope-pocket"></div>
+          
+          <div class="wax-seal" id="wax-seal">
+            <div class="wax-seal-inner">
+              <span class="seal-icon">❤️</span>
+            </div>
+            <div class="pulse-ring"></div>
+          </div>
+          
+          <div class="envelope-label">
+            <span class="script-to">Для самой любимой</span>
+            <h2 class="name-nata">Наты</h2>
+            <span class="tap-instruction">Нажми на печать, чтобы открыть</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================ -->
+  <!-- 2. MAIN INVITATION CONTENT                   -->
+  <!-- ============================================ -->
+  <main id="main-content" class="main-content hidden">
+    
+    <div class="content-container">
+      
+      <!-- Top Decorative Monogram / Greeting -->
+      <header class="header-badge">
+        <div class="sparkle-stars">✨ 💖 ✨</div>
+        <span class="sub-badge">Моему любимому человеку</span>
+        <h1 class="main-title">Только для тебя, Ната</h1>
+        <div class="decorative-line">
+          <span class="flame-icon">🔥</span>
+        </div>
+      </header>
+
+      <!-- Section: The Heartfelt Confession -->
+      <section class="card romantic-card fade-in">
+        <div class="card-glow"></div>
+        <div class="card-quote-mark">“</div>
+        <p class="lead-text">
+          Ты права насчет маленького количества романтики. 
+          Я тебя <span class="highlight-warm">безумно люблю</span> и считаю, 
+          что отношения не должны угасать со временем.
+        </p>
+      </section>
+
+      <!-- Section: Music Soundtrack (Монеточка - Твоё имя) -->
+      <section class="card music-card fade-in" id="music-card">
+        <div class="card-glow music-glow"></div>
+        <div class="section-tag">Наш саундтрек 🎵</div>
+        <div class="music-card-header">
+          <span class="music-note-pulse">🎧</span>
+          <div class="music-text-meta">
+            <h3 class="music-heading">Монеточка — «Твоё имя»</h3>
+            <p class="music-sub">Включи этот трек, пока читаешь дальше ❤️</p>
+          </div>
+        </div>
+        <div class="spotify-embed-container">
+          <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/track/060vEek3IcP3se8apjxo32?utm_source=generator&si=70019cb75ba34495" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        </div>
+      </section>
+
+      <!-- Section: Nirvana & Kurt Cobain Quote -->
+      <section class="card quote-card fade-in">
+        <div class="card-glow quote-glow"></div>
+        <div class="quote-header">
+          <span class="flame-badge">🔥 Огонь любви</span>
+        </div>
+        
+        <blockquote class="kurt-quote">
+          «Лучше сгореть, чем угаснуть»
+          <cite>— Курт Кобейн (Nirvana)</cite>
+        </blockquote>
+
+        <div class="quote-divider"></div>
+
+        <p class="quote-answer">
+          И я с ним согласен. Я выберу <span class="highlight-fire">сгореть от любви к тебе</span>, чем дать ей угаснуть.
+        </p>
+      </section>
+
+      <!-- Section: The Date Invitation -->
+      <section class="card invitation-card fade-in">
+        <div class="card-glow"></div>
+        <div class="section-tag">Особенный вечер</div>
+        <h2 class="invitation-heading">Я хочу сделать шаг и пригласить тебя на свидание.</h2>
+        
+        <div class="date-highlight-box">
+          <div class="date-icon-pulse">📹</div>
+          <div class="date-text-content">
+            <span class="date-day" id="dynamic-friday-text">В эту пятницу</span>
+            <span class="date-format">Болтать с включенными камерами</span>
+          </div>
+        </div>
+
+        <p class="date-description">
+          Только ты и я, тёплый свет, наши улыбки и разговоры обо всём на свете так, словно расстояния вовсе не существует.
+        </p>
+      </section>
+
+      <!-- Section: Countdown to Friday -->
+      <section class="card countdown-card fade-in">
+        <div class="countdown-title">
+          <span>⏳</span> До нашего свидания осталось:
+        </div>
+        <div class="countdown-grid" id="countdown-grid">
+          <div class="time-block">
+            <span class="time-number" id="days">00</span>
+            <span class="time-label">дней</span>
+          </div>
+          <div class="time-block">
+            <span class="time-number" id="hours">00</span>
+            <span class="time-label">часов</span>
+          </div>
+          <div class="time-block">
+            <span class="time-number" id="minutes">00</span>
+            <span class="time-label">минут</span>
+          </div>
+          <div class="time-block">
+            <span class="time-number" id="seconds">00</span>
+            <span class="time-label">секунд</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section: Interactive Checklist -->
+      <section class="card checklist-card fade-in">
+        <div class="card-glow"></div>
+        <div class="section-tag">Дресс-код и подготовка</div>
+        <h2 class="checklist-heading">При себе иметь:</h2>
+        <p class="checklist-sub">Отметь галочками, когда будешь готова:</p>
+
+        <div class="checklist-items">
+          <!-- Item 1 -->
+          <label class="checklist-item" for="check-1">
+            <input type="checkbox" id="check-1" class="custom-checkbox">
+            <div class="checkbox-visual">
+              <span class="check-icon">❤️</span>
+            </div>
+            <div class="item-content">
+              <span class="item-num">1.</span>
+              <span class="item-title">Мою любимую девушку <span class="highlight-tag">(тебя)</span></span>
+              <span class="item-hint">Самый важный и главный пункт в мире ✨</span>
+            </div>
+          </label>
+
+          <!-- Item 2 -->
+          <label class="checklist-item" for="check-2">
+            <input type="checkbox" id="check-2" class="custom-checkbox">
+            <div class="checkbox-visual">
+              <span class="check-icon">❤️</span>
+            </div>
+            <div class="item-content">
+              <span class="item-num">2.</span>
+              <span class="item-title">Вкусняшки, энергосики и чипсики</span>
+              <span class="item-hint">Любимые хрустяшки и напитки под рукой 🥤🍟</span>
+            </div>
+          </label>
+
+          <!-- Item 3 -->
+          <label class="checklist-item" for="check-3">
+            <input type="checkbox" id="check-3" class="custom-checkbox">
+            <div class="checkbox-visual">
+              <span class="check-icon">❤️</span>
+            </div>
+            <div class="item-content">
+              <span class="item-num">3.</span>
+              <span class="item-title">Хорошее настроение</span>
+              <span class="item-hint">А если устанешь — я согрею и подниму его 🥰</span>
+            </div>
+          </label>
+        </div>
+
+        <!-- Checklist completion badge -->
+        <div class="checklist-completed-banner hidden" id="checklist-banner">
+          <span class="badge-star">🌟</span>
+          <span>Чек-лист закрыт на 100%! Ты идеальна!</span>
+        </div>
+      </section>
+
+      <!-- Section: Decision & Action Buttons -->
+      <section class="card action-card fade-in">
+        <div class="action-question">
+          <h3>Ты пойдёшь со мной на свидание?</h3>
+          <p>Я очень жду твоего ответа</p>
+        </div>
+
+        <div class="button-group">
+          <button id="btn-accept" class="btn-primary">
+            <span class="btn-sparkle">✨</span>
+            <span class="btn-text">Я согласна! Буду ждать ❤️</span>
+          </button>
+
+          <button id="btn-playful" class="btn-secondary">
+            <span id="playful-text">Я подумаю... 😏</span>
+          </button>
+        </div>
+      </section>
+
+      <!-- Sweet Love Note Footer -->
+      <footer class="romantic-footer">
+        <p class="love-signature">Безумно тебя люблю, Ната ❤️</p>
+        <p class="sub-footer">Создано только для тебя • До скорой встречи в пятницу</p>
+      </footer>
+
+    </div>
+  </main>
+
+  <!-- ============================================ -->
+  <!-- 3. DATE TICKET MODAL (Celebration Screen)    -->
+  <!-- ============================================ -->
+  <div id="ticket-modal" class="ticket-modal hidden" role="dialog" aria-modal="true">
+    <div class="modal-backdrop"></div>
+    <div class="modal-container">
+      
+      <!-- Close button -->
+      <button class="modal-close" id="modal-close" aria-label="Закрыть билет">✕</button>
+      
+      <!-- The Golden Ticket Card -->
+      <div class="ticket-card">
+        <div class="ticket-top">
+          <div class="ticket-badge">VIP INVITATION</div>
+          <div class="ticket-header-title">Билет на свидание</div>
+          <div class="ticket-number">№ LOVE-2026-001</div>
+        </div>
+
+        <div class="ticket-body">
+          <div class="ticket-field">
+            <span class="field-label">ДЛЯ КОГО</span>
+            <span class="field-value">Любимая Ната 👑</span>
+          </div>
+
+          <div class="ticket-row">
+            <div class="ticket-field">
+              <span class="field-label">ДАТА</span>
+              <span class="field-value highlight-ticket" id="ticket-date-str">Пятница</span>
+            </div>
+            <div class="ticket-field">
+              <span class="field-label">ФОРМАТ</span>
+              <span class="field-value">Созвон с камерами 📹</span>
+            </div>
+          </div>
+
+          <div class="ticket-field">
+            <span class="field-label">ДРЕСС-КОД</span>
+            <span class="field-value">Уют + Чипсики и энергосики 🍟🥤</span>
+          </div>
+
+          <div class="ticket-field">
+            <span class="field-label">ВКЛЮЧЕНО</span>
+            <span class="field-value-small">Безлимитные комплименты, нежность, смех и парень, который тебя обожает ❤️</span>
+          </div>
+        </div>
+
+        <div class="ticket-notch-left"></div>
+        <div class="ticket-notch-right"></div>
+        <div class="ticket-dashed-line"></div>
+
+        <div class="ticket-footer">
+          <div class="barcode">
+            <span>||||| ||| ||||||| |||| |||||| ||||| |||</span>
+            <span class="barcode-sub">NATASHA-SPECIAL-DATE</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Action buttons on Modal -->
+      <div class="modal-buttons">
+        <button id="btn-calendar" class="btn-modal-action">
+          <span class="btn-icon">📅</span>
+          <span>Добавить в календарь телефона</span>
+        </button>
+        
+        <button id="btn-share-telegram" class="btn-modal-action btn-tg">
+          <span class="btn-icon">💌</span>
+          <span>Написать мне: «Я согласна!»</span>
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Main JavaScript File -->
+  <script src="script.js"></script>
+</body>
+</html>
